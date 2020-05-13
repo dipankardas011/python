@@ -13,14 +13,12 @@ print(f"total respositories: {response_dict['total_count']}")
 repo_dicts=response_dict['items']
 print(f"respositories returned: {len(repo_dicts)}")
 
-# examine the first repository
-repo_dict=repo_dicts[0]
-
-print("\nSelected information about first repository:")
-print(f"name: {repo_dict['name']}")
-print(f"Owner: {repo_dict['owner']['login']}")
-print(f"stars: {repo_dict['stargazers_count']}")
-print(f"repository: {repo_dict['html_url']}")
-print(f"created: {repo_dict['created_at']}")
-print(f"updated: {repo_dict['updated_at']}")
-print(f"description: {repo_dict['description']}")
+print("\nSelected information about each repository:")
+for repo_dict in repo_dicts:
+    print(f"name: {repo_dict['name']}")
+    print(f"Owner: {repo_dict['owner']['login']}")
+    print(f"stars: {repo_dict['stargazers_count']}")
+    print(f"repository: {repo_dict['html_url']}")
+    print(f"created: {repo_dict['created_at']}")
+    print(f"updated: {repo_dict['updated_at']}")
+    print(f"description: {repo_dict['description']}")
